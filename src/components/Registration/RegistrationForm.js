@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
@@ -28,7 +29,32 @@ const RegistrationForm = (props) => {
     }
 
     const submitUserInfo = () => { 
-        
+        if(state.username.length > 2 && state.email.length && state.password.length > 2){ 
+            let userInfo = {
+                username: state.username,
+                email: state.email,
+                password: state.password
+            }
+            axios.post("https://localhost:3001/user/register", payload)
+                .then(function(response) {
+                    if(response.status === 200){
+                        setState(prevState => ({
+                            ...prevState,
+                            'successMessage': 'Registration Successful!'
+                        }))
+                        redirectToHome()
+                        props.showError(null)
+                    } else { 
+                        props.showError("An error occured")
+                    }
+                })
+                .catch(function(error) {
+                    console.log(error)
+                })
+        } else {
+            props.showError('Please enter valid username and password')
+        }
+
     }
 
     return (
