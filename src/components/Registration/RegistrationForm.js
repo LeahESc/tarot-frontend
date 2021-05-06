@@ -30,7 +30,7 @@ const RegistrationForm = (props) => {
 
     const submitUserInfo = () => { 
         if(state.username.length > 2 && state.email.length && state.password.length > 2){ 
-            let userInfo = {
+            let payload = {
                 username: state.username,
                 email: state.email,
                 password: state.password
