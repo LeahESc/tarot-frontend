@@ -6,7 +6,9 @@ const RegistrationForm = (props) => {
     const[state, setState] = useState({
         username: '',
         email: '',
-        password: ''
+        password: '',
+        confirmPassword: '',
+        errors: ''
     })
 
     const handleChange = (e) => { 
@@ -17,6 +19,17 @@ const RegistrationForm = (props) => {
         }))
     }
    
+    const handleSubmit = (e) => { 
+        if(state.password === state.confirmPassword){
+            submitUserInfo()
+        } else { 
+            props.showError('Passwords do not match')
+        }
+    }
+
+    const submitUserInfo = () => { 
+        
+    }
 
     return (
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
@@ -50,6 +63,16 @@ const RegistrationForm = (props) => {
                         id="password"
                         name="password"
                         placeholder="Password" 
+                        onChange = {handleChange}/>
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control 
+                        type="confirmPassword" 
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm Password" 
                         onChange = {handleChange}/>
                 </Form.Group>
 
