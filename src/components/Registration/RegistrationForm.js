@@ -54,7 +54,11 @@ const RegistrationForm = (props) => {
         } else {
             props.showError('Please enter valid username and password')
         }
+    }
 
+    const redirectToHome = () => {
+        props.updateTitle('Home')
+        props.history.push('/home');
     }
 
     return (
