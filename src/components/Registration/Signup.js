@@ -21,6 +21,7 @@ const Signup = (props) => {
     }
    
     const handleSubmit = (e) => { 
+        e.preventDefault()
         if(state.password === state.confirmPassword){
             submitUserInfo()
         } else { 
@@ -59,7 +60,7 @@ const Signup = (props) => {
 
     return (
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <Form>
+            <Form onSubmit={handleSubmit()}>
             <Form.Group>
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
@@ -95,7 +96,7 @@ const Signup = (props) => {
                 <Form.Group>
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control 
-                        type="confirmPassword" 
+                        type="password" 
                         id="confirmPassword"
                         name="confirmPassword"
                         placeholder="Confirm Password" 
