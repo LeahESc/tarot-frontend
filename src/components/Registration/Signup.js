@@ -36,7 +36,7 @@ const Signup = (props) => {
                 email: state.email,
                 password: state.password
             }
-            axios.post("https://localhost:3001/users", {payload}, {withCredentials: true})
+            axios.post("http://localhost:3001/users", {payload}, {withCredentials: true})
                 .then(function(response) {
                     if(response.data.status === 'created'){
                         props.handleLogin(response.data)
