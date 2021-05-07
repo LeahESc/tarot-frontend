@@ -31,7 +31,7 @@ const App = () => {
     loginStatus()
   }, [])
 
-  loginStatus = () => { 
+  const loginStatus = () => { 
     axios.get('http://localhost:3001/logged_in', {withCredentials: true})
       .then(response => { 
         if(response.data.logged_in) {
