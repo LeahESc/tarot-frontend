@@ -20,8 +20,8 @@ const Signup = (props) => {
         }))
     }
    
-    const handleSubmit = (e) => { 
-        e.preventDefault()
+    const handleSubmit = (event) => { 
+        event.preventDefault()
         if(state.password === state.confirmPassword){
             submitUserInfo()
         } else { 
