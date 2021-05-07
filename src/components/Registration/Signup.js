@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
 
-const RegistrationForm = (props) => { 
+const Signup = (props) => { 
     const[state, setState] = useState({
         username: '',
         email: '',
@@ -116,4 +116,4 @@ const RegistrationForm = (props) => {
 
 }
 
-export default RegistrationForm
+export default Signup
