@@ -16,7 +16,7 @@ const Signup = (props) => {
         const {id, value} = e.target
         setState(prevState => ({
             ...prevState,
-            id: value
+            [id]: value
         }))
     }
    
@@ -60,7 +60,7 @@ const Signup = (props) => {
 
     return (
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <Form onSubmit={handleSubmit()}>
+            <Form onSubmit={handleSubmit}>
             <Form.Group>
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
@@ -68,7 +68,8 @@ const Signup = (props) => {
                         id="username"
                         name="username" 
                         placeholder="Create Username" 
-                        onChange = {handleChange}/>
+                        onChange = {handleChange}
+                         />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Email address</Form.Label>
