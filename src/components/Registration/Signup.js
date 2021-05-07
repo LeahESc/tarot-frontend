@@ -35,22 +35,18 @@ const Signup = (props) => {
                 email: state.email,
                 password: state.password
             }
-            axios.post("https://localhost:3001/user/register", payload)
+            axios.post("https://localhost:3001/users", {payload}, {withCredentials: true})
                 .then(function(response) {
-                    if(response.status === 200){
-                        setState(prevState => ({
-                            ...prevState,
-                            'successMessage': 'Registration Successful!'
-                        }))
+                    if(response.data.status === 'created'){
+                        props.handleLogin(response.data)
                         redirectToHome()
-                        props.showError(null)
+                        // props.showError(null)
                     } else { 
+                        console.log('errors:', response.data.errors)
                         props.showError("An error occured")
                     }
                 })
-                .catch(function(error) {
-                    console.log(error)
-                })
+                .catch(error =>  console.log(error))
         } else {
             props.showError('Please enter valid username and password')
         }

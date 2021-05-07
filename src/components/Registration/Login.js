@@ -3,12 +3,10 @@ import React, {useState} from 'react'
 import {Form, Button} from 'react-bootstrap'
 
 
-const Signup = (props) => { 
+const Login = (props) => { 
     const[state, setState] = useState({
         username: '',
-        email: '',
         password: '',
-        confirmPassword: '',
         errors: ''
     })
 
@@ -30,32 +28,25 @@ const Signup = (props) => {
 
     const submitUserInfo = (e) => { 
         e.preventDefault()
-        if(state.username.length > 2 && state.email.length && state.password.length > 2){ 
-            let payload = {
-                username: state.username,
-                email: state.email,
-                password: state.password
-            }
-            axios.post("https://localhost:3001/user/register", payload)
-                .then(function(response) {
-                    if(response.status === 200){
-                        setState(prevState => ({
-                            ...prevState,
-                            'successMessage': 'Registration Successful!'
-                        }))
-                        redirectToHome()
-                        props.showError(null)
-                    } else { 
-                        props.showError("An error occured")
-                    }
-                })
-                .catch(function(error) {
-                    console.log(error)
-                })
-        } else {
-            props.showError('Please enter valid username and password')
+       
+        let payload = {
+            username: state.username,
+            password: state.password
         }
+        axios.post('http://localhost:3001/login', {payload}, {withCredentials: true})
+            .then(response => { 
+                if (response.data.logged_in) { 
+                    props.handleLogin(response.data)
+                    redirectToHome()
+                } else { 
+                    setState({
+                        errors: response.data.errors
+                    })
+                }
+            })
+        .catch(error => console.log('api errors login:', error))
     }
+
 
     const redirectToHome = () => {
         props.updateTitle('Home')
@@ -95,4 +86,4 @@ const Signup = (props) => {
 
 }
 
-export default Signup
+export default Login
