@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import axios from 'axios'
 import Header from './components/Header/Header'
 import RegistrationForm from './components/Registration/RegistrationForm'
-
+import Home from './components/Home'
 
 const App = () => { 
 
@@ -26,17 +26,17 @@ const App = () => {
     })
   }
   
-  useEffect = () => { 
-
-  }
+  useEffect(() => { 
+    loginStatus()
+  }, [])
 
   loginStatus = () => { 
     axios.get('http://localhost:3001/logged_in', {withCredentials: true})
       .then(response => { 
         if(response.data.logged_in) {
-          this.handleLogin(response)
+          handleLogin(response)
         } else { 
-          this.handleLogout()
+          handleLogout()
         }
       })
       .catch(error => console.log('api errors:', error))
@@ -44,11 +44,11 @@ const App = () => {
     return (
       <>
       <Header/>
-      <RegistrationForm />
+      {/* <RegistrationForm /> */}
       <Router>
-        <Route exact path="/" component={}/>
+        <Route exact path="/" component={Home}/>
         <Route exact path="/login" component={}/> 
-        <Route exact path="/signup" component={}/>
+        <Route exact path="/signup" component={RegistrationForm}/>
       </Router>
       </>
     
