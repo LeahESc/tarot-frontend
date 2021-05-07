@@ -4,6 +4,7 @@ import axios from 'axios'
 import Header from './components/Header/Header'
 import Signup from './components/Registration/Signup'
 import Home from './components/Home'
+import Login from './components/Registration/Login'
 
 const App = () => { 
 
@@ -47,7 +48,7 @@ const App = () => {
       {/* <RegistrationForm /> */}
       <Router>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/login" component={}/> 
+        <Route exact path="/login" component={Login}/> 
         <Route exact path="/signup" component={Signup}/>
       </Router>
       </>
