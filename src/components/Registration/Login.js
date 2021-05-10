@@ -33,8 +33,17 @@ const Login = (props) => {
             username: state.username,
             password: state.password
         }
-        axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
-            .then(response => { 
+        let configObj = {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({user}),
+        }
+        fetch('http://localhost:3001/login', configObj, {withCredentials: true})
+        .then(resp => resp.json())
+        .then(response => { 
                 if (response.data.logged_in) { 
                     props.handleLogin(response.data)
                     redirectToHome()
@@ -49,8 +58,7 @@ const Login = (props) => {
 
 
     const redirectToHome = () => {
-        props.updateTitle('Home')
-        props.history.push('/home');
+        props.history.push('/');
     }
 
     return (
@@ -62,7 +70,7 @@ const Login = (props) => {
                         type="username"
                         id="username"
                         name="username" 
-                        placeholder="Create Username" 
+                        placeholder="Enter Your Username" 
                         onChange = {handleChange}/>
                 </Form.Group>
 
