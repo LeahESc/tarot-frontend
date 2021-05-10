@@ -14,7 +14,7 @@ const Login = (props) => {
         const {id, value} = e.target
         setState(prevState => ({
             ...prevState,
-            id: value
+            [id]: value
         }))
     }
    
@@ -49,7 +49,7 @@ const Login = (props) => {
                     redirectToHome()
                 } else { 
                     setState({
-                        errors: response.data.errors
+                        errors: response.errors
                     })
                 }
             })
