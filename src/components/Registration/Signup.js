@@ -43,18 +43,18 @@ const Signup = (props) => {
                     Accept: 'application/json',
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({username}),
+                body: JSON.stringify({user}),
             }
 
             fetch("http://localhost:3001/users", configObj, {withCredentials: true})
                 .then(resp => resp.json())
                 .then(response => {
-                    if(response.data.status === 'created'){
-                        props.handleLogin(response.data)
+                    if(response.status === 'created'){
+                        props.handleLogin(response.user)
                         redirectToHome()
                         // props.showError(null)
                     } else { 
-                        console.log('errors:', response.data.errors)
+                        console.log('errors:', response.errors)
                         props.showError("An error occured")
                     }
                 })
