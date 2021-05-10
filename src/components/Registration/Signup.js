@@ -37,8 +37,18 @@ const Signup = (props) => {
                 password: state.password,
                 password_confirmation: state.confirmPassword
             }
-            axios.post("http://localhost:3001/users", {user}, {withCredentials: true})
-                .then(function(response) {
+            let configObj = {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({username}),
+            }
+
+            fetch("http://localhost:3001/users", configObj, {withCredentials: true})
+                .then(resp => resp.json())
+                .then(response => {
                     if(response.data.status === 'created'){
                         props.handleLogin(response.data)
                         redirectToHome()
