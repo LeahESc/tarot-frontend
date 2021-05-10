@@ -34,7 +34,8 @@ const Signup = (props) => {
             let user = {
                 username: state.username,
                 email: state.email,
-                password: state.password
+                password: state.password,
+                password_confirmation: state.confirmPassword
             }
             axios.post("http://localhost:3001/users", {user}, {withCredentials: true})
                 .then(function(response) {
