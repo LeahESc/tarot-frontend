@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import Signup from './components/Registration/Signup'
 import Home from './components/Home'
 import Login from './components/Registration/Login'
+import UserHome from './components/User/UserHome'
 
 const App = () => { 
 
@@ -50,6 +51,7 @@ const App = () => {
         <Route exact path="/" component={Home}/>
         <Route exact path="/login" render={(props) => (<Login {...props} handleLogin={handleLogin} />)} /> 
         <Route exact path="/signup" render={(props) => (<Signup {...props} handleLogin={handleLogin} />)} />
+        <Route exact path="/home" render={(props) => (<UserHome {...props} user={state.user}/>)} />
       </Router>
       </>
     
