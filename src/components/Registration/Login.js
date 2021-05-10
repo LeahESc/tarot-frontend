@@ -44,8 +44,8 @@ const Login = (props) => {
         fetch('http://localhost:3001/login', configObj, {withCredentials: true})
         .then(resp => resp.json())
         .then(response => { 
-                if (response.data.logged_in) { 
-                    props.handleLogin(response.data)
+                if (response.logged_in) { 
+                    props.handleLogin(response.user)
                     redirectToHome()
                 } else { 
                     setState({
