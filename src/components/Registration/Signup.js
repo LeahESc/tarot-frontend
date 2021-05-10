@@ -65,8 +65,8 @@ const Signup = (props) => {
     }
 
     const redirectToHome = () => {
-        props.updateTitle('Home')
-        props.history.push('/home');
+        // props.updateTitle('Home')
+        props.history.push('/');
     }
 
     return (
