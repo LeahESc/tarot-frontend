@@ -48,7 +48,7 @@ const App = () => {
       {/* <RegistrationForm /> */}
       <Router>
         <Route exact path="/" component={Home}/>
-        <Route exact path="/login" component={Login}/> 
+        <Route exact path="/login" render={(props) => (<Login {...props} handleLogin={handleLogin} />)} /> 
         <Route exact path="/signup" render={(props) => (<Signup {...props} handleLogin={handleLogin} />)} />
       </Router>
       </>
