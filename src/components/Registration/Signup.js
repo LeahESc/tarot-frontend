@@ -31,12 +31,12 @@ const Signup = (props) => {
 
     const submitUserInfo = () => { 
         if(state.username.length > 2 && state.email.length && state.password.length > 2){ 
-            let payload = {
+            let user = {
                 username: state.username,
                 email: state.email,
                 password: state.password
             }
-            axios.post("http://localhost:3001/users", {payload}, {withCredentials: true})
+            axios.post("http://localhost:3001/users", {user}, {withCredentials: true})
                 .then(function(response) {
                     if(response.data.status === 'created'){
                         props.handleLogin(response.data)

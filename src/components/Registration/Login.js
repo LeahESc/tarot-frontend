@@ -29,11 +29,11 @@ const Login = (props) => {
     const submitUserInfo = (e) => { 
         e.preventDefault()
        
-        let payload = {
+        let user = {
             username: state.username,
             password: state.password
         }
-        axios.post('http://localhost:3001/login', {payload}, {withCredentials: true})
+        axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
             .then(response => { 
                 if (response.data.logged_in) { 
                     props.handleLogin(response.data)
