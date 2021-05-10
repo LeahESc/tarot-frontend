@@ -18,13 +18,13 @@ const Login = (props) => {
         }))
     }
    
-    const handleSubmit = (e) => { 
-        if(state.password === state.confirmPassword){
-            submitUserInfo()
-        } else { 
-            props.showError('Passwords do not match')
-        }
-    }
+    // const handleSubmit = (e) => { 
+    //     if(state.password === state.confirmPassword){
+    //         submitUserInfo()
+    //     } else { 
+    //         props.showError('Passwords do not match')
+    //     }
+    // }
 
     const submitUserInfo = (e) => { 
         e.preventDefault()
@@ -63,7 +63,7 @@ const Login = (props) => {
 
     return (
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <Form>
+            <Form onSubmit={submitUserInfo}> 
             <Form.Group>
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
