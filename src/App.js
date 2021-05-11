@@ -27,6 +27,8 @@ const App = () => {
   }
 
   const handleLogout = () => { 
+    setLoggedIn(false)
+    setUser({})
     // setState({
     //   isLoggedIn: false,
     //   user: {}
