@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import axios from 'axios'
 import Header from './components/Header/Header'
 import Signup from './components/Registration/Signup'
-import Home from './components/Home'
+import Home from './components/welcome/Home'
 import Login from './components/Registration/Login'
 import UserHome from './components/User/UserHome'
 
