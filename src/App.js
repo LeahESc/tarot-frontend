@@ -9,23 +9,28 @@ import UserHome from './components/User/UserHome'
 
 const App = () => { 
 
-  const [state, setState] = useState({
-    isLoggedIn: false,
-    user: {}
-  })
+  // const [state, setState] = useState({
+  //   isLoggedIn: false,
+  //   user: {}
+  // })
+
+  const [isLoggedIn, setLoggedIn] = useState(false)
+  const [user, setUser]= useState({})
 
   const handleLogin = (data) => { 
-    setState({
-      isLoggedIn: true,
-      user: data.user
-    })
+    setLoggedIn(true)
+    setUser(data)
+    // setState({
+    //   isLoggedIn: true,
+    //   user: data
+    // })
   }
 
   const handleLogout = () => { 
-    setState({
-      isLoggedIn: false,
-      user: {}
-    })
+    // setState({
+    //   isLoggedIn: false,
+    //   user: {}
+    // })
   }
   
   useEffect(() => { 
@@ -51,7 +56,7 @@ const App = () => {
         <Route exact path="/" component={Home}/>
         <Route exact path="/login" render={(props) => (<Login {...props} handleLogin={handleLogin} />)} /> 
         <Route exact path="/signup" render={(props) => (<Signup {...props} handleLogin={handleLogin} />)} />
-        <Route exact path="/home" render={(props) => (<UserHome {...props} user={state.user}/>)} />
+        <Route exact path="/home" render={(props) => (<UserHome {...props} user={user}/>)} />
       </Router>
       </>
     
