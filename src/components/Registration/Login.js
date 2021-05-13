@@ -62,7 +62,8 @@ const Login = (props) => {
     }
 
     const styles = {
-        color: "black"
+        color: "black",
+        fontSize: "2rem"
     }
 
     return (

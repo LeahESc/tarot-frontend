@@ -61,7 +61,8 @@ code {
 
 h1.title { 
   font-size: var(--fs-h1);
-  font-family: var(--ff-display)
+  font-family: var(--ff-display);
+  color: white
 }
 
 .registrationContainer {
