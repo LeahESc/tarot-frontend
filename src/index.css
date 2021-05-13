@@ -52,6 +52,18 @@ code {
     monospace;
 }
 
+a {
+  color:rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+a:hover,
+:visited { 
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
 .home { 
   padding-top: 4em; 
   display: block;

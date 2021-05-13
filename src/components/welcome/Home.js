@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import Button from '../Button/Button'
 
 const Home = () => {
     return (
@@ -8,11 +9,11 @@ const Home = () => {
             <h1 className="title"> Small Spells Tarot </h1>
 
             <div className="registrationContainer">
-                <Link to='/signup'>Sign Up</Link>
+                <Button><Link to='/signup'>Sign Up</Link></Button>
             </div>
 
             <div className="registrationContainer">
-                <Link to='/login'>Login</Link>
+                <Button><Link to='/login'>Login</Link></Button>
             </div>
         </div>
     )
