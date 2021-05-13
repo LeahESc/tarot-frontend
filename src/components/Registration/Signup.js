@@ -70,8 +70,11 @@ const Signup = (props) => {
     }
 
     return (
+        <div className="loginContainer">
+        <div className="content">
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
             <Form onSubmit={handleSubmit}>
+                <h2>Sign Up</h2>
             <Form.Group>
                     <Form.Label>Username</Form.Label>
                     <Form.Control 
@@ -119,6 +122,8 @@ const Signup = (props) => {
                     Submit
                 </Button>
                 </Form>
+        </div>
+        </div>
         </div>
 
     )
