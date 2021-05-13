@@ -52,7 +52,7 @@ const App = () => {
   }
     return (
       <>
-      <Header/>
+      <Header user={user}/>
       {/* <RegistrationForm /> */}
       <Router>
         <Route exact path="/" component={Home}/>
