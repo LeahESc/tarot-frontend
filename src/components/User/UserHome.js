@@ -2,9 +2,9 @@ import React from 'react'
 import Button from '../Button/Button.js'
 
 const UserHome = (props) => {
-    if(props.user) { 
+    if(props.user.username) { 
     return (
-        <div>
+        <div className="user--home"> 
             <h1 className="title"> Hello {props.user.username}</h1>
         
         <Button>Past Pulls</Button>
@@ -14,8 +14,8 @@ const UserHome = (props) => {
     )
     } else { 
         return (
-            <div>
-                <h1> Please login or signup</h1>
+            <div className="user--home">
+                <h1 className="title"> Please login or signup</h1>
             </div>
         )
     }

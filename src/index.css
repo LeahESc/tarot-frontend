@@ -95,3 +95,9 @@ div.content {
   display: table-cell;
   vertical-align: middle;
 }
+
+.user--home { 
+  display: block;
+  text-align: center;
+  margin-top: 4rem;
+}
