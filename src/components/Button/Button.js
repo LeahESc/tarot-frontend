@@ -7,12 +7,12 @@ const Button = styled.button`
     border: .15rem solid white;
     color: white;
     margin: 0 1rem;
-    padding: 1.5rem 1.5rem;
+    padding: 1rem 1.5rem;
     font-size: 1.5rem;
 
     &:hover { 
-    background: white;
-    color: black
+    background-color: white;
+    color: black;
     }
     `
 
