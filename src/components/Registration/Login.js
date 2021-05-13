@@ -61,11 +61,18 @@ const Login = (props) => {
         props.history.push('/home');
     }
 
+    const styles = {
+        color: "black"
+    }
+
     return (
+        <div className="loginContainer">
+        <div className="content">
         <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-            <Form onSubmit={submitUserInfo}> 
+            <Form onSubmit={submitUserInfo} style={styles}> 
+            <h2> Login </h2>
             <Form.Group>
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>Username:</Form.Label>
                     <Form.Control 
                         type="username"
                         id="username"
@@ -87,9 +94,10 @@ const Login = (props) => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                </Form>
+            </Form>
+            </div>
         </div>
-
+        </div>
     )
 
 }
