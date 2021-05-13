@@ -1,3 +1,36 @@
+*, 
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* font-family: 'Ceviche One', cursive;
+font-family: 'Reggae One', cursive; */
+
+
+:root {
+  --ff-primary: 'Source Code Pro', monospace;;
+  --ff-secondary: 'Source Code Pro', monospace;
+  --ff-display: 'Ceviche One', cursive;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #fff;
+  --clr-dark: #141414;
+  --clr-accent: #ff82e4;
+  --clr-bkground: #fff1d9;
+  --clr-blush: #ffa08e; 
+ 
+  --fs-h1: 8.5rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem; 
+  --fs-body: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rbga(0,0,0,.25);
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,8 +38,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-color: var(--clr-dark);
   color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%
 }
 
 code {
@@ -15,12 +53,20 @@ code {
 }
 
 .home { 
-  margin-left: 40%;
   padding-top: 4em; 
   display: block;
+  text-align: center;
+}
+
+h1.title { 
+  font-size: var(--fs-h1);
+  font-family: var(--ff-display)
 }
 
 .registrationContainer {
+  padding: 2%; 
   display: inline-block;
+  vertical-align: top;
+  align-items: center;
   text-decoration: none;
 }

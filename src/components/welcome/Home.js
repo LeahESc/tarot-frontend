@@ -4,11 +4,15 @@ import {Link} from 'react-router-dom'
 const Home = () => {
     return (
         <div className="home"> 
-            <h1> Small Spells Tarot </h1>
+
+            <h1 className="title"> Small Spells Tarot </h1>
+
             <div className="registrationContainer">
-            <Link to='/signup'>Sign Up</Link>
-            <br></br>
-            <Link to='/login'>Login</Link>
+                <Link to='/signup'>Sign Up</Link>
+            </div>
+
+            <div className="registrationContainer">
+                <Link to='/login'>Login</Link>
             </div>
         </div>
     )
